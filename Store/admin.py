@@ -6,7 +6,7 @@ from .models import Item, Items_in, Items_out, Items_Total
 
 @admin.register(Item)
 class ItemAdmin(admin.ModelAdmin):
-    list_display = ('id',  'name', 'item_model','unit', )
+    list_display = ('id',  'name', 'item_model', 'unit', )
 
 
 @admin.register(Items_in)
@@ -23,4 +23,4 @@ class Items_outAdmin(admin.ModelAdmin):
 
 @admin.register(Items_Total)
 class Items_TotalAdmin(admin.ModelAdmin):
-    list_display = ('item', 'quantity', 'is_deleted')
+    list_display = ('item', 'quantity', 'location', 'is_deleted')

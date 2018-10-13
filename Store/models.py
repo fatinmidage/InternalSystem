@@ -13,7 +13,7 @@ class Item(models.Model):
 
 
 class Items_in(models.Model):
-    item = models.ForeignKey(Item,on_delete=models.DO_NOTHING)
+    item = models.ForeignKey(Item, on_delete=models.DO_NOTHING)
     quantity = models.IntegerField()
     price = models.FloatField()
     total_price = models.FloatField()
@@ -23,9 +23,8 @@ class Items_in(models.Model):
     is_deleted = models.BooleanField(default=False)
 
 
-
 class Items_out(models.Model):
-    item = models.ForeignKey(Item,on_delete=models.DO_NOTHING)
+    item = models.ForeignKey(Item, on_delete=models.DO_NOTHING)
     quantity = models.IntegerField()
     out_date = models.DateField()
     location = models.CharField(max_length=10)
@@ -33,9 +32,8 @@ class Items_out(models.Model):
     is_deleted = models.BooleanField(default=False)
 
 
-
 class Items_Total(models.Model):
-    item = models.ForeignKey(Item,on_delete=models.DO_NOTHING)
+    item = models.ForeignKey(Item, on_delete=models.DO_NOTHING)
     quantity = models.IntegerField()
+    location = models.CharField(max_length=10, blank=True)
     is_deleted = models.BooleanField(default=False)
-

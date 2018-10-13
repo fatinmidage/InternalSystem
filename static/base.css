@@ -1,0 +1,11 @@
+
+nav.navbar {
+    margin-bottom: 0px;
+}
+
+div.jumbotron {
+    background-color: rgb(241, 241, 241);
+    margin-bottom: 0px;
+    height: -webkit-fill-available;
+}
+
