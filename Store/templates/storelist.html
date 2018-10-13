@@ -1,40 +1,41 @@
 {% extends 'base.html' %}
+{% load staticfiles %}
+
 
 {% block title %}广丰惠州库存管理系统{%endblock%}
 
+<link href="{% static 'storelist.css' %}" rel="stylesheet">
+
+
 {% block content %}
 
-<div class="jumbotron">
-  <div class="container">
-    <div class="panel panel-default">
-      <!-- Default panel contents -->
-      <div class="panel-heading">
-        今日库存
-      </div>
-
-      <!-- Table -->
-      <table class="table">
-        <tr>
-          <th>序号</th>
-          <th>物品</th>
-          <th>规格</th>
-          <th>单位</th>
-          <th>数量</th>
-          <th>位置</th>
-        </tr>
-        {% for item in store %}
-
-        <tr>
-          <td>{{item.item.id}}</td>
-          <td>{{item.item.name}}</td>
-          <td>{{item.item.item_model}}</td>
-          <td>{{item.item.unit}}</td>
-          <td>{{item.quantity}}</td>
-          <td>{{item.location}}</td>
-        </tr>
-        {% endfor %}
-      </table>
-    </div>
+<div class="panel panel-default" style="margin-left: 80px;margin-top: 40px;margin-right: 80px;">
+  <!-- Default panel contents -->
+  <div class="panel-heading">
+    今日库存
   </div>
+
+  <!-- Table -->
+  <table class="table">
+    <tr>
+      <th>序号</th>
+      <th>物品</th>
+      <th>规格</th>
+      <th>单位</th>
+      <th>数量</th>
+      <th>位置</th>
+    </tr>
+    {% for item in store %}
+    <tr>
+      <!-- 这里要改成普通的序号，不用物品的id -->
+      <td>{{item.item.id}}</td>
+      <td>{{item.item.name}}</td>
+      <td>{{item.item.item_model}}</td>
+      <td>{{item.item.unit}}</td>
+      <td>{{item.quantity}}</td>
+      <td>{{item.location}}</td>
+    </tr>
+    {% endfor %}
+  </table>
 </div>
 {% endblock %}

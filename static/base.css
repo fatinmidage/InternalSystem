@@ -4,8 +4,11 @@ nav.navbar {
 }
 
 div.jumbotron {
-    background-color: rgb(241, 241, 241);
+    /* background-color: rgb(241, 241, 241); */
     margin-bottom: 0px;
     height: -webkit-fill-available;
 }
 
+html {
+    background-color:rgb(241, 241, 241);
+}
