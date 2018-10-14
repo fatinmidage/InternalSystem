@@ -15,9 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
-# from Store.views import storelist
+from Store.views import storelist
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',include('Store.urls')),
+    path('store/',include('Store.urls')),
+    path('',storelist,name='storelist'),
 ]
