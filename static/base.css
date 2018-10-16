@@ -1,14 +1,12 @@
-
 nav.navbar {
     margin-bottom: 0px;
 }
 
-div.jumbotron {
-    /* background-color: rgb(241, 241, 241); */
-    margin-bottom: 0px;
-    height: -webkit-fill-available;
+div#content {
+    margin-top: 1em;
 }
 
-html {
-    background-color:rgb(241, 241, 241);
+div#tablelist {
+    width: 70%;
+    margin: 0 auto;
 }

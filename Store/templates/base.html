@@ -24,7 +24,7 @@
 
 <body>
     <!-- 导航条 -->
-    <nav class="navbar navbar-default" >
+    <nav class="navbar navbar-default">
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
@@ -56,8 +56,12 @@
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
     </nav>
-    {% block content %}
-    {% endblock %}
+    <div id="content">
+        <div id="tablelist">
+            {% block content %}
+            {% endblock %}
+        </div>
+    </div>
 
     <!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
     <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
