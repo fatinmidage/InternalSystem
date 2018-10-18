@@ -1,9 +1,11 @@
+"""docstring占位符"""
 from django.db import models
 
 # Create your models here.
 
 
 class Item(models.Model):
+    """docstring占位符"""
     name = models.CharField(max_length=20)
     item_model = models.CharField(max_length=20)
     unit = models.CharField(max_length=6)
@@ -14,6 +16,7 @@ class Item(models.Model):
 
 
 class Items_in(models.Model):
+    """docstring占位符"""
     item = models.ForeignKey(Item, on_delete=models.DO_NOTHING)
     quantity = models.IntegerField()
     price = models.FloatField()
@@ -23,7 +26,9 @@ class Items_in(models.Model):
     is_deleted = models.BooleanField(default=False)
 
 
+
 class Items_out(models.Model):
+    """docstring占位符"""
     item = models.ForeignKey(Item, on_delete=models.DO_NOTHING)
     quantity = models.IntegerField()
     out_date = models.DateField()
@@ -32,6 +37,7 @@ class Items_out(models.Model):
 
 
 class Items_Total(models.Model):
+    """docstring占位符"""
     item = models.ForeignKey(Item, on_delete=models.DO_NOTHING)
     quantity = models.IntegerField()
     is_deleted = models.BooleanField(default=False)

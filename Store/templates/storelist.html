@@ -5,7 +5,7 @@
 {% block title %}广丰惠州库存管理系统{%endblock%}
 
 <link href="{% static 'storelist.css' %}" rel="stylesheet">
-
+{% block nav_total_active %}active{% endblock %}
 
 {% block content %}
 
@@ -18,7 +18,7 @@
   <!-- Table -->
   <table class="table">
     <tr>
-      <th>序号</th>
+      <th>物品ID</th>
       <th>物品</th>
       <th>规格</th>
       <th>单位</th>
@@ -33,7 +33,7 @@
       <td>{{item.item.item_model}}</td>
       <td>{{item.item.unit}}</td>
       <td>{{item.quantity}}</td>
-      <td>{{item.location}}</td>
+      <td>{{item.item.location}}</td>
     </tr>
     {% endfor %}
   </table>

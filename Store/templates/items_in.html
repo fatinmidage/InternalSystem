@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block title %}广丰惠州库存管理系统{%endblock%}
+{% block head %}
+<link href="{% static 'items_in.css' %}" rel="stylesheet">
+{% endblock %}
+
+
+{% block nav_in_active %}active{% endblock %}
+
+{% block content %}
+
+<div class="input_box">
+    <form action="{% url 'add_items_to_intable' %}" method="post">
+        {% csrf_token %}
+        物品ID：
+        <input type="number" name="item_id" id="">
+        物品：
+        <input type="text" name="item_name" readonly size="8">
+        规格：
+        <input type="text" name="item_model" readonly size="6">
+        单位：
+        <input type="text" name="item_unit" readonly size="6">
+        <br>
+        数量：
+        <input type="number" name="quantity" id="" size="3">
+        单价：
+        <input type="number" name="price" id="" size="3">
+        入库日期：
+        <input type="date" name="in_date" id="">
+        入库员：
+        <input type="text" name="operator" id="" size="8">
+        <input type="submit" value="提交入库">
+    </form>
+</div>
+
+<div class="panel panel-default">
+    <!-- Default panel contents -->
+    <div class="panel-heading">
+        入库明细
+    </div>
+
+    <!-- Table -->
+    <table class="table">
+        <tr>
+            <th>序号</th>
+            <th>时间</th>
+            <th>物品</th>
+            <th>规格</th>
+            <th>单位</th>
+            <th>数量</th>
+            <th>单价</th>
+            <th>总价</th>
+            <th>入库员</th>
+            <th>位置</th>
+        </tr>
+        {% for item in items %}
+        <tr>
+            <!-- 这里要改成普通的序号，不用物品的id -->
+            <td>{{item.id}}</td>
+            <td>{{item.in_date}}</td>
+            <td>{{item.item.name}}</td>
+            <td>{{item.item.item_model}}</td>
+            <td>{{item.item.unit}}</td>
+            <td>{{item.quantity}}</td>
+            <td>{{item.price}}</td>
+            <td>{{item.total_price}}</td>
+            <td>{{item.operator}}</td>
+            <td>{{item.item.location}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endblock %}
