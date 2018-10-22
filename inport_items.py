@@ -1,13 +1,11 @@
-# 读取物品类型
+"""导入excel表"""
 import pandas as pd
+from Store.models import Item
 
-df = pd.DataFrame()
 
-df = pd.read_excel('C:/Users/fg104/Desktop/汇总.xlsx',
+data_frame = pd.DataFrame()
+data_frame = pd.read_excel('汇总.xlsx',
                    sheet_name='库存总表', index_col='序号')
-
-
-# print(df.shape)
-# print(df.columns)
-# print(df.head())
-print(df['位置'][25])
+it_item = Item()
+print(it_item)
+print(data_frame['物品'][25])
