@@ -16,10 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
-from Store.views import storelist
+from Store.views import storelist, log_in
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('store/', include('Store.urls')),
     path('', storelist, name='storelist'),
+    path('login/', log_in, name='log_in'),
 ]

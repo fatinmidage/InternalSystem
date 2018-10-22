@@ -1,16 +1,16 @@
 {% extends 'base.html' %}
-{% load staticfiles %}
+<!-- {% load staticfiles %} -->
 
 {% block title %}广丰惠州库存管理系统{%endblock%}
+
 {% block head %}
 <link href="{% static 'items_in.css' %}" rel="stylesheet">
 {% endblock %}
 
-
 {% block nav_in_active %}active{% endblock %}
 
 {% block content %}
-
+{% if user.is_authenticated %}
 <div class="input_box">
     <form action="{% url 'add_items_to_intable' %}" method="post">
         {% csrf_token %}
@@ -30,10 +30,11 @@
         入库日期：
         <input type="date" name="in_date" id="">
         入库员：
-        <input type="text" name="operator" id="" size="8">
+        <input type="text" name="operator" id="" size="8" value="{{user.username}}" readonly>
         <input type="submit" value="提交入库">
     </form>
 </div>
+{% endif %}
 
 <div class="panel panel-default">
     <!-- Default panel contents -->
@@ -70,6 +71,7 @@
             <td>{{item.item.location}}</td>
         </tr>
         {% endfor %}
+        {{a}}
     </table>
 </div>
 {% endblock %}

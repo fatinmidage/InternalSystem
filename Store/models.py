@@ -15,7 +15,7 @@ class Item(models.Model):
         return self.name+' '+self.item_model+' '+self.unit
 
 
-class Items_in(models.Model):
+class ItemsIn(models.Model):
     """docstring占位符"""
     item = models.ForeignKey(Item, on_delete=models.DO_NOTHING)
     quantity = models.IntegerField()
@@ -27,7 +27,7 @@ class Items_in(models.Model):
 
 
 
-class Items_out(models.Model):
+class ItemsOut(models.Model):
     """docstring占位符"""
     item = models.ForeignKey(Item, on_delete=models.DO_NOTHING)
     quantity = models.IntegerField()
@@ -36,7 +36,7 @@ class Items_out(models.Model):
     is_deleted = models.BooleanField(default=False)
 
 
-class Items_Total(models.Model):
+class ItemsTotal(models.Model):
     """docstring占位符"""
     item = models.ForeignKey(Item, on_delete=models.DO_NOTHING)
     quantity = models.IntegerField()

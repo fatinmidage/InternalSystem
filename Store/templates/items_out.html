@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% load staticfiles %}
+<!-- {% load staticfiles %} -->
 
 {% block title %}广丰惠州库存管理系统{%endblock%}
 {% block head %}
@@ -10,7 +10,7 @@
 {% block nav_out_active %}active{% endblock %}
 
 {% block content %}
-
+{% if user.is_authenticated %}
 <div class="output_box">
     <form action="{% url 'add_items_to_outtable' %}" method="post">
         {% csrf_token %}
@@ -28,10 +28,11 @@
         出库日期：
         <input type="date" name="out_date" id="">
         出库员：
-        <input type="text" name="operator" id="" size="8">
+        <input type="text" name="operator" id="" size="8" value="{{user.username}}" readonly>
         <input type="submit" value="提交出库">
     </form>
 </div>
+{% endif %}
 
 <div class="panel panel-default">
     <!-- Default panel contents -->

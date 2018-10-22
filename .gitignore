@@ -1,1 +1,11 @@
 db.sqlite3
+# Python:
+__pycache__/
+Store/__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg
+*.egg-info
+dist
+build
