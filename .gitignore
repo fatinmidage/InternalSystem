@@ -9,3 +9,4 @@ Store/__pycache__/
 *.egg-info
 dist
 build
+InternalSystem/settings.py
