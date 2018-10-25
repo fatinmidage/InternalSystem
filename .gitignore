@@ -1,5 +1,6 @@
 db.sqlite3
 InternalSystem/settings.py
+InternalSystem/__pycache__/
 # Python:
 __pycache__/
 Store/__pycache__/
@@ -10,4 +11,3 @@ Store/__pycache__/
 *.egg-info
 dist
 build
-InternalSystem/__pycache__/
