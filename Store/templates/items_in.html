@@ -34,6 +34,14 @@
         <input type="submit" value="提交入库">
     </form>
 </div>
+<div class="delete_record">
+    <form action="#" method="post">
+        {% csrf_token %}
+        入库单号：
+        <input type="number" name="record_num">
+        <input type="submit" value="删除入库">
+    </form>
+</div>
 {% endif %}
 
 <div class="panel panel-default">
