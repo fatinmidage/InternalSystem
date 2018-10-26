@@ -55,8 +55,10 @@
             <th>总价</th>
             <th>入库员</th>
             <th>位置</th>
+            <th>入库单号</th>
         </tr>
         {% for item in items %}
+        {% if not item.is_deleted %}
         <tr>
             <!-- 这里要改成普通的序号，不用物品的id -->
             <td>{{item.id}}</td>
@@ -69,7 +71,9 @@
             <td>{{item.total_price}}</td>
             <td>{{item.operator}}</td>
             <td>{{item.item.location}}</td>
+            <td>{{item.id}}</td>
         </tr>
+        {% endif %}
         {% endfor %}
         {{a}}
     </table>
