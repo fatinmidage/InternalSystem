@@ -113,3 +113,19 @@ def log_in(rq_request: request):
 def log_out(rq_requesst: request):
     """用户登出"""
     pass
+
+
+def delete_in_record(rq_request: request):
+    """删除入库记录"""
+    in_id = int(rq_request.POST.get('record_num'))
+    try:
+        iti_itemin = ItemsIn.objects.get(pk=in_id)
+        iti_itemin.is_deleted = True
+        iti_itemin.save()
+    except:
+        print(f'没有{{in_id}}入库单号')
+    finally:
+        dt_in = ItemsIn.objects.all()
+        context = {}
+        context['items'] = dt_in
+        return render(rq_request, 'items_in.html', context)
