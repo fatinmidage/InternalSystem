@@ -124,7 +124,7 @@ def delete_in_record(rq_request: request):
         iti_itemin.save()
         modify_items_total(iti_itemin.item, -iti_itemin.quantity)
     except:
-        print(f"没有'{in_id}'这个入库单号")
+        print(f"没有'{in_id}'这个单号")
     dt_in = ItemsIn.objects.all()
     context = {}
     context['items'] = dt_in
@@ -140,7 +140,7 @@ def delete_out_record(rq_request: request):
         ito_itemout.save()
         modify_items_total(ito_itemout.item, ito_itemout.quantity)
     except:
-        print(f"没有'{out_id}'这个入库单号")
+        print(f"没有'{out_id}'这个单号")
     dt_out = ItemsOut.objects.all()
     context = {}
     context['items'] = dt_out
