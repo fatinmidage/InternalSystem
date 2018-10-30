@@ -3,20 +3,27 @@ import pandas as pd
 from Store.models import Item, ItemsTotal
 
 
-data_frame = pd.DataFrame()
-data_frame = pd.read_excel('汇总.xlsx',
-                           sheet_name='库存总表', index_col='序号')
-for i in range(1,len(data_frame)+1):
+df_dataframe = pd.DataFrame()
+df_dataframe = pd.read_excel('汇总.xlsx',
+                             sheet_name='库存总表', index_col='序号')
+for i in range(1, len(df_dataframe)+1):
     it = Item()
-    it.name = data_frame['物品'][i]
-    it.item_model = data_frame['规格型号'][i]
-    it.unit = data_frame['单位'][i]
-    it.location = data_frame['位置'][i]
+    it.name = df_dataframe['物品'][i]
+    it.item_model = df_dataframe['规格型号'][i]
+    it.unit = df_dataframe['单位'][i]
+    it.location = df_dataframe['位置'][i]
     it.save()
 
-for i in range(len(data_frame)):
+for i in range(len(df_dataframe)):
     its = ItemsTotal()
     its.item = Item.objects.all()[i]
-    its.quantity = data_frame['结余'][i+1]
+    its.quantity = df_dataframe['结余'][i+1]
     its.save()
     print(its.item.name)
+
+def export_inventory_sheet(rq_request:request):
+    """导出盘点表"""
+    # 1.对总表的位置列去重并排序，得到一个唯一有序的“位置数组”
+    # 2.遍历“位置数组”，通过fileter函数查询同一位置的queryset，并添加到新的对象中
+    # 3.删除对象中数量为零的行
+    # 4.保存整理结果到excel文件
