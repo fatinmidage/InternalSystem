@@ -1,14 +1,6 @@
 InternalSystem/settings.py
 测试表.xlsx
 
-# Python:
-# *.py[cod]
-# *.so
-# *.egg
-# *.egg-info
-# dist
-# build
-
 .vscode
 InternalSystem/__pycache__/
 Store/__pycache__/
