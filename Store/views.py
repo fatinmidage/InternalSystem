@@ -5,7 +5,7 @@ from django.http import request
 from django.shortcuts import get_object_or_404
 from django.contrib.auth import authenticate, login
 import xlsxwriter
-import pandas as pd
+# import pandas as pd
 from .models import ItemsTotal, ItemsIn, Item, ItemsOut
 
 # Create your views here.
@@ -66,7 +66,6 @@ def add_items_to_intable(rq_request: request):
 
 def details_out(rq_request: request):
     """显示出库明细页面"""
-    print('进入details_out函数')
     items_out = ItemsOut.objects.all()
     context = {}
     context['items'] = items_out
