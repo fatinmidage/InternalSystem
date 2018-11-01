@@ -117,36 +117,36 @@ def log_out(rq_requesst: request):
     pass
 
 
-def delete_in_record(rq_request: request):
-    """删除入库记录"""
-    in_id = int(rq_request.POST.get('record_num'))
-    try:
-        iti_itemin = ItemsIn.objects.get(pk=in_id)
-        iti_itemin.is_deleted = True
-        iti_itemin.save()
-        modify_items_total(iti_itemin.item, -iti_itemin.quantity)
-    except:
-        print(f"没有'{in_id}'这个单号")
-    dt_in = ItemsIn.objects.all()
-    context = {}
-    context['items'] = dt_in
-    return render(rq_request, 'items_in.html', context)
+# def delete_in_record(rq_request: request):
+#     """删除入库记录"""
+#     in_id = int(rq_request.POST.get('record_num'))
+#     try:
+#         iti_itemin = ItemsIn.objects.get(pk=in_id)
+#         iti_itemin.is_deleted = True
+#         iti_itemin.save()
+#         modify_items_total(iti_itemin.item, -iti_itemin.quantity)
+#     except:
+#         print(f"没有'{in_id}'这个单号")
+#     dt_in = ItemsIn.objects.all()
+#     context = {}
+#     context['items'] = dt_in
+#     return render(rq_request, 'items_in.html', context)
 
 
-def delete_out_record(rq_request: request):
-    """删除出库记录"""
-    out_id = int(rq_request.POST.get('record_num'))
-    try:
-        ito_itemout = ItemsOut.objects.get(pk=out_id)
-        ito_itemout.is_deleted = True
-        ito_itemout.save()
-        modify_items_total(ito_itemout.item, ito_itemout.quantity)
-    except:
-        print(f"没有'{out_id}'这个单号")
-    dt_out = ItemsOut.objects.all()
-    context = {}
-    context['items'] = dt_out
-    return render(rq_request, 'items_out.html', context)
+# def delete_out_record(rq_request: request):
+#     """删除出库记录"""
+#     out_id = int(rq_request.POST.get('record_num'))
+#     try:
+#         ito_itemout = ItemsOut.objects.get(pk=out_id)
+#         ito_itemout.is_deleted = True
+#         ito_itemout.save()
+#         modify_items_total(ito_itemout.item, ito_itemout.quantity)
+#     except:
+#         print(f"没有'{out_id}'这个单号")
+#     dt_out = ItemsOut.objects.all()
+#     context = {}
+#     context['items'] = dt_out
+#     return render(rq_request, 'items_out.html', context)
 
 
 # def export_inventory_sheet(rq_request: request):

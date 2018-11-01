@@ -10,7 +10,7 @@ urlpatterns = [
     path('add/', add_items_to_intable, name='add_items_to_intable'),
     path('out/', details_out, name='details_out'),
     path('min/', add_items_to_outtable, name='add_items_to_outtable'),
-    path('delete_in_record/', delete_in_record, name='delete_in_record'),
-    path('delete_out_record/', delete_out_record, name='delete_out_record'),
+    # path('delete_in_record/', delete_in_record, name='delete_in_record'),
+    # path('delete_out_record/', delete_out_record, name='delete_out_record'),
     # path('export_excel', export_inventory_sheet, name='export_inventory_sheet'),
 ]
