@@ -149,32 +149,26 @@ def delete_out_record(rq_request: request):
     return render(rq_request, 'items_out.html', context)
 
 
-def export_inventory_sheet(rq_request: request):
-    """导出盘点表"""
-    # 1.对总表的位置列去重并排序，得到一个唯一有序的“位置数组”
-    # 2.遍历“位置数组”，通过fileter函数查询同一位置的queryset，并添加到新的对象中
-    # 3.删除对象中数量为零的行
-    # 4.保存整理结果到excel文件
-    total_store = ItemsTotal.objects.all()
-    dt_dataframe = pd.DataFrame()
-    for i in range(len(total_store)):
-        # temp_dict = [total_store[i].item.id, total_store[i].item.name, total_store[i].item.item_model,
-        #              total_store[i].item.unit, total_store[i].item.location, total_store[i].quantity]
-        # dt_temp = pd.DataFrame(temp_dict)
-        # print(dt_temp)
-        # dt_dataframe = dt_dataframe.append(dt_temp, ignore_index=True)
-        item_ob = total_store[i].item
-        L1 = [item_ob.id, item_ob.name, item_ob.item_model,
-              item_ob.unit, item_ob.location, total_store[i].quantity]
-        L2 = ['物品id', '物品', '规格型号', '单位', '位置', '数量', ]
-        s1 = pd.Series(L1, index=L2)
-        dt_dataframe = dt_dataframe.append(s1, ignore_index=True)
-    print(dt_dataframe.head())
+# def export_inventory_sheet(rq_request: request):
+#     """导出盘点表"""
+#     # 1.对总表的位置列去重并排序，得到一个唯一有序的“位置数组”
+#     # 2.遍历“位置数组”，通过fileter函数查询同一位置的queryset，并添加到新的对象中
+#     # 3.删除对象中数量为零的行
+#     # 4.保存整理结果到excel文件
+#     total_store = ItemsTotal.objects.all()
+#     dt_dataframe = pd.DataFrame()
+#     for i in range(len(total_store)):
+#         item_ob = total_store[i].item
+#         L1 = [item_ob.id, item_ob.name, item_ob.item_model,
+#               item_ob.unit, item_ob.location, total_store[i].quantity]
+#         L2 = ['物品id', '物品', '规格型号', '单位', '位置', '数量', ]
+#         s1 = pd.Series(L1, index=L2)
+#         dt_dataframe = dt_dataframe.append(s1, ignore_index=True)
 
-    writer = pd.ExcelWriter('测试表.xlsx')
-    dt_dataframe.to_excel(writer, 'Sheet1')
-    writer.save()
+#     writer = pd.ExcelWriter('测试表.xlsx')
+#     dt_dataframe.to_excel(writer, 'Sheet1')
+#     writer.save()
 
-    context = {}
-    context['store'] = total_store
-    return render(rq_request, 'storelist.html', context)
+#     context = {}
+#     context['store'] = total_store
+#     return render(rq_request, 'storelist.html', context)
