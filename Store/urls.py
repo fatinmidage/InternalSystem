@@ -3,7 +3,7 @@ from django.urls import path
 from .views import storelist, details_in, add_items_to_intable
 from .views import details_out, add_items_to_outtable
 from .views import delete_in_record, delete_out_record
-from .views import export_inventory_sheet
+# from .views import export_inventory_sheet
 
 urlpatterns = [
     path('', storelist, name='storelist'),
@@ -13,5 +13,5 @@ urlpatterns = [
     path('min/', add_items_to_outtable, name='add_items_to_outtable'),
     path('delete_in_record/', delete_in_record, name='delete_in_record'),
     path('delete_out_record/', delete_out_record, name='delete_out_record'),
-    path('export_excel', export_inventory_sheet, name='export_inventory_sheet'),
+    # path('export_excel', export_inventory_sheet, name='export_inventory_sheet'),
 ]
