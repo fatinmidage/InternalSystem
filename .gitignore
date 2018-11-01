@@ -1,17 +1,1 @@
-db.sqlite3
 InternalSystem/settings.py
-InternalSystem/__pycache__/
-.vscode/
-# Python:
-__pycache__/
-Store/__pycache__/
-*.py[cod]
-*$py.class
-*.so
-*.egg
-*.egg-info
-dist
-build
-store.sql
-测试表.xlsx
-Store\migrations\__pycache__
