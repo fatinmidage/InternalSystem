@@ -10,6 +10,6 @@ dist
 build
 
 .vscode
-InternalSystem/__pycache__/
-Store/__pycache__/
-Store/migrations/__pycache__/
+# InternalSystem/__pycache__/
+# Store/__pycache__/
+# Store/migrations/__pycache__/
