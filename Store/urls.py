@@ -1,8 +1,9 @@
 '''处理Store的路由'''
 from django.urls import path
 from .views import storelist, details_in, add_items_to_intable
-from .views import details_out, add_items_to_outtable, delete_in_record, delete_out_record
-from .views import export_inventory_sheet
+from .views import details_out, add_items_to_outtable
+# from .views import delete_in_record, delete_out_record
+# from .views import export_inventory_sheet
 
 urlpatterns = [
     path('', storelist, name='storelist'),
