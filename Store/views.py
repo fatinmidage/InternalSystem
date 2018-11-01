@@ -66,6 +66,7 @@ def add_items_to_intable(rq_request: request):
 
 def details_out(rq_request: request):
     """显示出库明细页面"""
+    print('进入details_out函数')
     items_out = ItemsOut.objects.all()
     context = {}
     context['items'] = items_out
