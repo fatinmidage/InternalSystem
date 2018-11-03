@@ -4,8 +4,9 @@ from django.shortcuts import render, redirect
 from django.http import request
 from django.shortcuts import get_object_or_404
 from django.contrib.auth import authenticate, login
-# import xlsxwriter
-import pandas as pd
+import xlsxwriter
+import numpy
+# import pandas as pd
 from .models import ItemsTotal, ItemsIn, Item, ItemsOut
 
 # Create your views here.
