@@ -6,7 +6,7 @@ from django.shortcuts import get_object_or_404
 from django.contrib.auth import authenticate, login
 import xlsxwriter
 import numpy
-# import pandas as pd
+import pandas as pd
 from .models import ItemsTotal, ItemsIn, Item, ItemsOut
 
 # Create your views here.
