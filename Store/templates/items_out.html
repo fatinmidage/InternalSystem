@@ -28,7 +28,7 @@
         出库日期：
         <input type="date" name="out_date" id="">
         出库员：
-        <input type="text" name="operator" id="" size="8" value="{{user.username}}" readonly>
+        <input type="text" name="operator" id="" size="8" value="{{user.last_name}}{{user.first_name}}" readonly>
         <input type="submit" value="提交出库">
     </form>
 </div>
