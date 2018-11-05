@@ -31,7 +31,7 @@ class ItemsOut(models.Model):
     item = models.ForeignKey(Item, on_delete=models.DO_NOTHING)
     quantity = models.IntegerField()
     out_date = models.DateField()
-    item_user = models.CharField(max_length=10, blank=True)
+    item_user = models.CharField(max_length=10)
     operator = models.CharField(max_length=10)
     is_deleted = models.BooleanField(default=False)
 
