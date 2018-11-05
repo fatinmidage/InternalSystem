@@ -21,7 +21,7 @@ class ItemsInAdmin(admin.ModelAdmin):
 @admin.register(ItemsOut)
 class ItemsOutAdmin(admin.ModelAdmin):
     """docstring占位"""
-    list_display = ('id', 'item', 'quantity', 'out_date',
+    list_display = ('id', 'item', 'quantity', 'out_date', 'item_user',
                     'operator', 'is_deleted',)
 
 

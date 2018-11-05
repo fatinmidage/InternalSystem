@@ -26,12 +26,12 @@ class ItemsIn(models.Model):
     is_deleted = models.BooleanField(default=False)
 
 
-
 class ItemsOut(models.Model):
     """docstring占位符"""
     item = models.ForeignKey(Item, on_delete=models.DO_NOTHING)
     quantity = models.IntegerField()
     out_date = models.DateField()
+    item_user = models.CharField(max_length=10, blank=True)
     operator = models.CharField(max_length=10)
     is_deleted = models.BooleanField(default=False)
 
