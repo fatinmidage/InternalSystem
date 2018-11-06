@@ -5,8 +5,8 @@ from django.http import request
 from django.shortcuts import get_object_or_404
 from django.contrib.auth import authenticate, login
 import xlsxwriter
-import numpy
-import pandas as pd
+# import numpy
+# import pandas as pd
 from .models import ItemsTotal, ItemsIn, Item, ItemsOut
 
 # Create your views here.
@@ -15,7 +15,7 @@ from .models import ItemsTotal, ItemsIn, Item, ItemsOut
 def storelist(rq_request: request):
     """显示库存情况页面"""
     store_details = ItemsTotal.objects.all()
-    context = {}
+    context = {} 
     context['store'] = store_details
     return render(rq_request, 'storelist.html', context)
 
