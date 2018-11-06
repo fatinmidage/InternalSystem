@@ -60,6 +60,7 @@
             <th>单位</th>
             <th>数量</th>
             <th>出库员</th>
+            <th>领用人</th>
             <th>出库单号</th>
         </tr>
         {% for item in items %}
@@ -73,6 +74,7 @@
             <td>{{item.item.unit}}</td>
             <td>{{item.quantity}}</td>
             <td>{{item.operator}}</td>
+            <td>{{item.item_user}}</td>
             <td>{{item.id}}</td>
         </tr>
         {% endif %}
