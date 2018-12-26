@@ -5,3 +5,5 @@ InternalSystem/settings.py
 InternalSystem/__pycache__/
 Store/__pycache__/
 Store/migrations/__pycache__/
+
+storedb.sql
